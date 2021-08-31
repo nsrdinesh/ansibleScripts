@@ -1,0 +1,23 @@
+# install apache http webserver
+---
+- hosts: loadbalancers
+  become: true
+  tasks:
+    - name: Install Apache httpd webserver
+      yum:
+        name: httpd
+        state: present
+    - name: Start the Httpd service
+      service: name=httpd state=started enabled=yes
+
+- hosts: webservers
+  become: true
+  tasks:
+    - name: Install multiple packages
+      yum:
+        name:
+          - httpd
+          - php
+        state: present
+    - name: Start the Httpd service
+      service: name=httpd state=started enabled=yes

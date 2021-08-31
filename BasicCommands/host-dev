@@ -1,0 +1,12 @@
+#inventory file
+
+[webservers]
+ web1 ansible_host=44.196.227.201
+ web2 ansible_host=44.195.231.109
+
+[loadbalancers]
+app1 ansible_host=44.197.94.182
+
+
+[local]
+control  ansible_connection=local

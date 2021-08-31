@@ -1,0 +1,9 @@
+# yum updates
+---
+- hosts: webservers:loadbalancers
+  become: true
+  tasks:
+    - name: Updating the Yum packages to latest
+      yum:
+        name: "*"
+        state: latest

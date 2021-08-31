@@ -1,0 +1,7 @@
+-
+  name: 'Execute ansible command'
+  hosts: localhost
+  tasks:
+    -
+       name: 'Execute the date command'
+       command: 'cat /etc/hosts' 

@@ -1,0 +1,6 @@
+#uname.yml
+---
+- hosts: webservers:loadbalancers
+  tasks:
+    - name: Identify the name of the linux
+      shell: uname
